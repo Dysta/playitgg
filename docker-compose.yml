@@ -7,3 +7,5 @@ services:
     deploy:
       restart_policy:
         condition: unless-stopped
+    volumes:
+      - ./secrets:/secrets

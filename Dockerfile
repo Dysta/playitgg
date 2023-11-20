@@ -9,4 +9,6 @@ RUN curl -SsL https://playit-cloud.github.io/ppa/key.gpg | gpg --dearmor | tee /
 RUN apt update && \
     apt install -y playit
 
-CMD ["playit", "-s"]
+RUN mkdir -p /secrets
+
+CMD ["playit", "--stdout", "--secret_path", "/secrets/playit.toml"]
